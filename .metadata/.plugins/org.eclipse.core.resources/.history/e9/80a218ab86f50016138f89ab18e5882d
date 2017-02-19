@@ -1,0 +1,13 @@
+package Controls;
+
+public class Runner {
+	static KingInTheNorth jonSnow;
+	public static void main(String[] args) {
+		start();
+	}
+	public static void start(){
+		jonSnow = new KingInTheNorth();
+	}
+
+
+}

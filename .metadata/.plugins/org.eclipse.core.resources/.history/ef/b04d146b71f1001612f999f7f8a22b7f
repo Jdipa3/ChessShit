@@ -1,0 +1,16 @@
+package model;
+
+import javax.swing.ImageIcon;
+
+public abstract class SuperPiece extends ImageIcon {
+
+	protected String icon;
+	// true = white, false = black
+	protected ImageIcon pieceIcon;
+	
+	public SuperPiece(){
+	}
+	
+	protected abstract boolean checkIfMoveIsValid();
+	
+}

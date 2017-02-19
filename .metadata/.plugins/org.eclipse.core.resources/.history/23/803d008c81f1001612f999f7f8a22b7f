@@ -1,0 +1,22 @@
+package Controls;
+import View.*;
+import model.ChessBoard;
+import model.Tile;
+
+public class MainController {
+
+	private ChessBoard gameBoard;
+	private BoardPanel gameBoardPanel;
+	
+	public MainController(){
+		gameBoardPanel = new BoardPanel();
+		gameBoard = new ChessBoard();
+		instantiateJFrame();
+	}
+	public void instantiateJFrame(){
+		MainFrame mf = new MainFrame();
+		gameBoardPanel.setChessBoardLayout(gameBoard);
+		mf.initializePanels(new NavBar(), gameBoardPanel);
+		mf.setVisible(true);		
+	}
+}

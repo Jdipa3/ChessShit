@@ -1,0 +1,45 @@
+package Controls;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+
+import View.*;
+import model.GameBoard;
+import model.Tile;
+import model.WhitePawn;
+
+public class KingInTheNorth {
+
+	private GameBoard gameBoard;
+	private BoardPanel gameBoardPanel;
+	private MainFrame mf;
+	public KingInTheNorth(){
+		gameBoardPanel = new BoardPanel();
+		gameBoard = new GameBoard();
+		instantiateJFrame();
+		placeChessPiecesToStartingPositions();
+		mf.setVisible(true);	
+	}
+	public void instantiateJFrame(){
+		mf = new MainFrame();
+		gameBoardPanel.setChessBoardLayout(gameBoard);
+		mf.initializePanels(new NavBar(), gameBoardPanel);
+	
+	}
+//	public void initializeGamePieces(){
+//		gameBoard.placeChessPiecesToStartingPositions();
+//	}
+//	
+	
+	public void placeChessPiecesToStartingPositions(){
+		Tile a = new Tile(Color.BLACK);
+		gameBoard.chessSquare[1][0].setChessPiece(new WhitePawn());
+//		board[1][0].setIcon();
+//		board[1][0] = new JLabel("/Users/jondipasquale/Documents/workspace/TestShit/src/images/Pawn_White-2.jpg");
+//		board[1][0].revalidate();
+//		board[1][0].repaint();
+		
+	}
+	
+	
+}

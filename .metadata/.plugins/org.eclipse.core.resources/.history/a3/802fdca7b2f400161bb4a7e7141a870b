@@ -1,0 +1,46 @@
+package Controls;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+
+import View.*;
+import model.Bishop;
+import model.GameBoard;
+import model.Tile;
+import model.WhitePawn;
+
+public class KingInTheNorth {
+
+	private GameBoard gameBoard;
+	private BoardPanel gameBoardPanel;
+	private MainFrame mf;
+	public KingInTheNorth(){
+		gameBoardPanel = new BoardPanel();
+		gameBoard = new GameBoard();
+		instantiateJFrame();
+		placeChessPiecesToStartingPositions();
+		mf.setVisible(true);	
+	}
+	public void instantiateJFrame(){
+		mf = new MainFrame();
+		gameBoardPanel.setChessBoardLayout(gameBoard);
+		mf.initializePanels(new NavBar(), gameBoardPanel);
+	
+	}
+//	public void initializeGamePieces(){
+//		gameBoard.placeChessPiecesToStartingPositions();
+//	}
+//	
+	
+	public void placeChessPiecesToStartingPositions(){
+
+		for (int i = 0; i < 8; i++){
+			gameBoard.chessSquare[1][i].setChessPiece(new WhitePawn());
+		}
+		gameBoard.chessSquare[0][0].setChessPiece(new Bishop(Color.BLACK));
+
+		
+	}
+	
+	
+}

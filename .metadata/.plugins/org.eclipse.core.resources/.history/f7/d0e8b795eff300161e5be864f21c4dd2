@@ -1,0 +1,13 @@
+package model;
+
+public class Pawn extends SuperPiece{
+
+	public boolean hasMadeFirstMove;
+	
+	@Override
+	protected boolean checkIfMoveIsValid() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

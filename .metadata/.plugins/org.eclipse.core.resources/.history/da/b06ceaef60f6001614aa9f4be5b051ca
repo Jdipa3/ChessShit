@@ -1,0 +1,48 @@
+package model;
+
+import java.awt.Color;
+import java.awt.Point;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+public class GameBoard {
+
+	public Tile[][] chessSquare;
+	public GameBoard(){
+		chessSquare = new Tile[8][8];
+		initializeTiles();
+	}
+	private void initializeTiles(){
+//		for(int i = 0; i < 8; i++){
+//			for(int j = 0; j < 8; j++){				
+//				if(( (i % 2 == j % 2 ) ) ){
+//					chessSquare[i][j] = new Tile(Color.LIGHT_GRAY, new Point(i,j));
+//				}else{
+//					chessSquare[i][j] = new Tile(Color.WHITE,new Point(i,j));
+//				}
+//			}
+//		}
+		boolean color = true;
+		for(int i = 0; i < 8; i++) {
+		    for(int j = 0; j < 8; i++) {
+
+		        if(color) {
+
+						chessSquare[i][j] = new Tile(Color.LIGHT_GRAY, new Point(i,j));
+
+		        } else {
+					chessSquare[i][j] = new Tile(Color.WHITE,new Point(i,j));
+
+		        }
+		        color = !color;
+		    }
+		    color = !color;
+		}
+	}
+	public Tile[][] getBoard(){
+		return chessSquare;
+	}
+	
+}

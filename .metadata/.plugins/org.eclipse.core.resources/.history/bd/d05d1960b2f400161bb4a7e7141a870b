@@ -1,0 +1,16 @@
+package model;
+
+import java.awt.Color;
+
+public class Bishop extends SuperPiece {
+
+	
+	
+	public Bishop(Color clr){
+		
+		if(clr == Color.BLACK){
+			System.out.println("is bLack");
+		}
+	}
+	
+}

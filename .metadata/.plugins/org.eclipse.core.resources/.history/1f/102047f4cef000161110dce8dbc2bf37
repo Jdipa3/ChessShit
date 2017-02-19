@@ -1,0 +1,14 @@
+package model;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+public class Tile extends JLabel {
+
+	private Color tileColor;
+	public Tile(Color clr){
+		tileColor = clr;
+		this.setBackground(tileColor);
+	}
+}

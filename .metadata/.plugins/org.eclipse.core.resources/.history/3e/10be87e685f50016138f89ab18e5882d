@@ -1,0 +1,92 @@
+package Controls;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+
+import View.*;
+import model.Bishop;
+import model.BlackPawn;
+import model.GameBoard;
+import model.King;
+import model.Knight;
+import model.Queen;
+import model.Rook;
+import model.Tile;
+import model.WhitePawn;
+
+public class KingInTheNorth {
+
+	private GameBoard gameBoard;
+	private BoardPanel gameBoardPanel;
+	private MainFrame mf;
+	public KingInTheNorth(){
+		gameBoardPanel = new BoardPanel();
+		gameBoard = new GameBoard();
+		instantiateJFrame();
+		placeChessPiecesToStartingPositions();
+		mf.setVisible(true);	
+	}
+	public void instantiateJFrame(){
+		mf = new MainFrame();
+		gameBoardPanel.setChessBoardLayout(gameBoard);
+		mf.initializePanels(new NavBar(), gameBoardPanel);
+	
+	}
+//	public void initializeGamePieces(){
+//		gameBoard.placeChessPiecesToStartingPositions();
+//	}
+//	
+	
+	public void placeChessPiecesToStartingPositions(){
+
+		//add White Pawns
+		for (int i = 0; i < 8; i++){
+			gameBoard.chessSquare[1][i].setChessPiece(new WhitePawn());
+		}
+		// add Black Pawn
+		for (int i = 0; i < 8; i++){
+			gameBoard.chessSquare[6][i].setChessPiece(new BlackPawn());
+		}
+		//add white rooks
+		gameBoard.chessSquare[0][0].setChessPiece(new Rook(Color.WHITE));
+		gameBoard.chessSquare[0][7].setChessPiece(new Rook(Color.WHITE));
+
+		//add black rook
+		gameBoard.chessSquare[7][0].setChessPiece(new Rook(Color.BLACK));
+		gameBoard.chessSquare[7][7].setChessPiece(new Rook(Color.BLACK));
+		
+		//add white knights
+		gameBoard.chessSquare[0][1].setChessPiece(new Knight(Color.WHITE));
+		gameBoard.chessSquare[0][6].setChessPiece(new Knight(Color.WHITE));
+		
+		//add black knights
+		gameBoard.chessSquare[7][1].setChessPiece(new Knight(Color.BLACK));
+		gameBoard.chessSquare[7][6].setChessPiece(new Knight(Color.BLACK));
+		
+		//add white bishop
+		gameBoard.chessSquare[0][2].setChessPiece(new Bishop(Color.WHITE));
+		gameBoard.chessSquare[0][5].setChessPiece(new Bishop(Color.WHITE));
+		
+		//add black bishop
+		gameBoard.chessSquare[7][2].setChessPiece(new Bishop(Color.BLACK));
+		gameBoard.chessSquare[7][5].setChessPiece(new Bishop(Color.BLACK));
+		
+		//add white queen
+		gameBoard.chessSquare[0][3].setChessPiece(new Queen(Color.WHITE));
+		//add black queen
+		gameBoard.chessSquare[7][3].setChessPiece(new Queen(Color.BLACK));
+		
+		//add white king
+		gameBoard.chessSquare[0][4].setChessPiece(new King(Color.WHITE));
+		//add black king
+		gameBoard.chessSquare[7][4].setChessPiece(new King(Color.BLACK));
+				
+				
+				
+		
+
+		
+	}
+	
+	
+}

@@ -1,0 +1,28 @@
+package Controls;
+import View.*;
+import model.ChessBoard;
+import model.Tile;
+
+public class KingInTheNorth {
+
+	private ChessBoard gameBoard;
+	private BoardPanel gameBoardPanel;
+	private MainFrame mf;
+	public KingInTheNorth(){
+		gameBoardPanel = new BoardPanel();
+		gameBoard = new ChessBoard();
+		instantiateJFrame();
+		initializeGamePieces();
+	}
+	public void instantiateJFrame(){
+		mf = new MainFrame();
+		gameBoardPanel.setChessBoardLayout(gameBoard);
+		mf.initializePanels(new NavBar(), gameBoardPanel);
+		mf.setVisible(true);		
+	}
+	public void initializeGamePieces(){
+		gameBoard.placeChessPiecesToStartingPositions();
+	}
+	
+	
+}

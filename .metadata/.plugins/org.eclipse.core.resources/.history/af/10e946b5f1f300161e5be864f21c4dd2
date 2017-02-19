@@ -1,0 +1,13 @@
+package model;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
+public class WhitePawn extends Pawn {
+	public WhitePawn(){
+
+		this.pieceIcon = new ImageIcon(getClass().getClassLoader().getResource("Pawn_White.jpg"));
+	}
+
+}

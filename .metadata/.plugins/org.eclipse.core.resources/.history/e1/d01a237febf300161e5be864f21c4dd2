@@ -1,0 +1,24 @@
+package model;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+public class Tile extends JLabel {
+
+	private Color tileColor;
+	private SuperPiece chessPiece;
+	public Tile(Color clr){
+		tileColor = clr;
+		this.chessPiece = null;
+		this.setBackground(tileColor);
+		this.setOpaque(true);
+	}
+	public void setChessPiece(SuperPiece piece){
+		chessPiece = piece;
+	}
+	public SuperPiece getChessPiece(){
+		return chessPiece;
+	}
+	
+}

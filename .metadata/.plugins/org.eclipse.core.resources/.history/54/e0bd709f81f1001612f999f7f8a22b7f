@@ -1,0 +1,13 @@
+package Controls;
+
+public class Runner {
+	static MainController mf;
+	public static void main(String[] args) {
+		start();
+	}
+	public static void start(){
+		mf = new MainController();
+	}
+
+
+}

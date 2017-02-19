@@ -1,0 +1,56 @@
+package model;
+
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JLabel;
+
+public class Tile extends JLabel implements MouseListener {
+
+	private Color tileColor;
+	private SuperPiece chessPiece;
+	public Tile(Color clr){
+		tileColor = clr;
+		this.chessPiece = null;
+		this.setBackground(tileColor);
+		this.setOpaque(true);
+		this.setIcon(null);
+		this.setHorizontalAlignment(JLabel.CENTER);
+	}
+	public void setChessPiece(SuperPiece piece){
+		chessPiece = piece;
+		this.setIcon(piece.getPieceIcon());
+	}
+	public SuperPiece getChessPiece(){
+		return chessPiece;
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		System.out.println("s");
+		System.out.print(e.getX());
+		System.out.print(e.getY());
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

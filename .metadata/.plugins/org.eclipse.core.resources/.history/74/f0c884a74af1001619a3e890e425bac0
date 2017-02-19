@@ -1,0 +1,19 @@
+package model;
+
+public abstract class SuperPiece {
+
+	protected String icon;
+	// true = white, false = black
+	protected boolean color;
+
+	
+	public SuperPiece(boolean pieceColor){
+		color = pieceColor;
+	}
+	
+	protected abstract boolean checkIfMoveIsValid();
+	
+	public boolean getPieceColor(){
+		return color;
+	}
+}

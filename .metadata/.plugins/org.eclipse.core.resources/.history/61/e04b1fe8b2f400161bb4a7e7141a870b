@@ -1,0 +1,20 @@
+package model;
+
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+
+public class Bishop extends SuperPiece {
+
+	
+	
+	public Bishop(Color clr){
+		
+		if(clr == Color.BLACK){
+			this.pieceIcon = new ImageIcon(getClass().getClassLoader().getResource("black-bishop.png"));
+		}else{
+			this.pieceIcon = new ImageIcon(getClass().getClassLoader().getResource("white-bishop.png"));
+		}
+	}
+	
+}

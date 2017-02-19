@@ -1,0 +1,30 @@
+package model;
+
+import java.awt.Color;
+
+public class ChessBoard {
+
+	Tile[][] board;
+	public ChessBoard(){
+		board = new Tile[8][8];
+		initializeTiles();
+	}
+	private void initializeTiles(){
+		boolean determinator = true;
+		for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){
+				if(determinator){
+					board[i][j] = new Tile(Color.gray);
+					board[i][j].setText("hello");
+				}else{
+					board[i][j] = new Tile(Color.white);
+				}
+			}
+		}
+	}
+	public Tile[][] getBoard(){
+		return board;
+	}
+
+	
+}

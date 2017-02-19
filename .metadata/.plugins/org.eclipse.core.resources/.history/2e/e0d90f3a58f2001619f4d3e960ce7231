@@ -1,0 +1,39 @@
+package model;
+
+import java.awt.Color;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+public class ChessBoard {
+
+	Tile[][] board;
+	public ChessBoard(){
+		board = new Tile[8][8];
+		initializeTiles();
+	}
+	private void initializeTiles(){
+		for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){				
+				if(( (i % 2 == j % 2 ) ) ){
+					board[i][j] = new Tile(Color.LIGHT_GRAY);
+				}else{
+					board[i][j] = new Tile(Color.WHITE);
+				}
+			}
+		}
+	}
+	public Tile[][] getBoard(){
+		return board;
+	}
+	public void placeChessPiecesToStartingPositions(){
+		Tile a = new Tile(Color.BLACK);
+		board[1][0].setChessPiece(new WhitePawn());
+		board[1][0].setIcon(new ImageIcon(getClass().getResource("/images/Pawn_White-2.jpg")));
+//		board[1][0] = new JLabel("/Users/jondipasquale/Documents/workspace/TestShit/src/images/Pawn_White-2.jpg");
+		board[1][0].revalidate();
+		board[1][0].repaint();
+		
+	}
+}

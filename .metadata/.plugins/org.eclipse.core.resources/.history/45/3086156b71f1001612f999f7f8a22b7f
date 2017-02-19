@@ -1,0 +1,11 @@
+package model;
+
+import javax.swing.ImageIcon;
+
+public class WhitePawn extends Pawn {
+	
+	public WhitePawn(){
+		this.pieceIcon = new ImageIcon("images/Black_Pawn.svg");		
+	}
+
+}
